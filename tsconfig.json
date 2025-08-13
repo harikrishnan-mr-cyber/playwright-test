@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                  // Output modern JavaScript
+    "module": "commonjs",                // Node.js module system
+    "strict": true,                      // Enable strict type checking
+    "esModuleInterop": true,             // Allow default imports from CommonJS
+    "skipLibCheck": true,                 // Don't type-check dependencies
+    "forceConsistentCasingInFileNames": true // Prevent filename case issues
+  },
+  "include": ["tests/**/*.ts"],          // Only compile files inside tests folder
+  "exclude": ["node_modules"]            // Ignore dependencies
+}
