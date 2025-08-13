@@ -11,6 +11,7 @@ test('Login to SauceDemo', async ({ page }) => {
   await page.click('#login-button');
   // 5. Verify login success - check that products page is visible
   await expect(page.locator('.title')).toHaveText('Products');
+  console.log('Login successful, products page is visible');
 });
 // handle the exception if the login fails
 test('Login failure handling', async ({ page }) => {
@@ -25,4 +26,5 @@ test('Login failure handling', async ({ page }) => {
   // 5. Verify error message is displayed
   const errorMessage = await page.locator('.error-message-container').textContent();
   expect(errorMessage).toContain('Username and password do not match any user in this service');
+    console.error('Login failed, error message displayed:', errorMessage);
 }); 
