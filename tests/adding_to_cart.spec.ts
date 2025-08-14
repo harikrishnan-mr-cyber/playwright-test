@@ -137,10 +137,8 @@ test('clicking check out', async ({ page }) => {
   await expect(page.locator('.title')).toHaveText('Checkout: Complete!');
   console.log('Checkout Complete page is visible');
   // 21. verify that the thank you message is visible
-  // const thankYouMessage = await page.locator('.complete-header').textContent();
-  // expect(thankYouMessage).toContain('THANK YOU FOR YOUR ORDER');
-  // console.log('Thank you message is visible:', thankYouMessage);
+  const thankYouMessage = await page.locator('.complete-header').textContent();
+  expect(thankYouMessage).toContain('Thank you for your order!');
+  console.log('Thank you message is visible:', thankYouMessage);
 
-  await expect(page.locator('.complete-header')).toHaveText('Thank you for your order!');
-  console.log('Thank you message is visible');
 });
