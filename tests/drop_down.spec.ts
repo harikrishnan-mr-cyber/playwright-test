@@ -50,7 +50,7 @@ test('Check drop down menu options', async ({ page }) => {
   console.log('Fourth option is Price (high to low)');
 });
 
-test('Check dclicking option will change the sorting', async ({ page }) => {
+test('Check clicking option will change the sorting', async ({ page }) => {
   // 1. Go to SauceDemo login page
   await page.goto('https://www.saucedemo.com/');
   // 2. Fill in username
@@ -75,9 +75,15 @@ test('Check dclicking option will change the sorting', async ({ page }) => {
   console.log('Drop down menu has four options');
   await expect(options.nth(1)).toHaveText('Name (Z to A)');
   console.log('Second option is Name (Z to A)');
-  // 10. click on the second option
-  await options.nth(1).click();
-  console.log('Clicked on second option');
+  // 10. click on the second option with value "za"
+  // await expect (options.nth(1)).toBeVisible();
+  // await options.nth(1).click();
+  // console.log('Clicked on second option');
+
+  const dropdown = page.locator('select.product_sort_container');
+  await dropdown.selectOption('za'); // or { index: 1 }
+  console.log('Selected second option');
+
   // 11. verify that the products are sorted in descending order by name
   const productNames = page.locator('.inventory_item_name');
   // get all the names of the products
