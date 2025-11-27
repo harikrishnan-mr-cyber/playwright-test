@@ -79,7 +79,9 @@ test('Check clicking option will change the sorting', async ({ page }) => {
   // await expect (options.nth(1)).toBeVisible();
   // await options.nth(1).click();
   // console.log('Clicked on second option');
-
+  
+  /*Always use selectOption() for <select> elements,
+  never try to click individual <option> elements directly! */
   const dropdown = page.locator('select.product_sort_container');
   await dropdown.selectOption('za'); // or { index: 1 }
   console.log('Selected second option');
