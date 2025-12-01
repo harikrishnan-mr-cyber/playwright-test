@@ -34,7 +34,7 @@ export class LoginPage {
    * The baseURL is picked from Playwright config, so no hard-coded URL is required.
    */
   async goto() {
-    await this.page.goto('/');
+    await this.page.goto('https://www.saucedemo.com/');
   }
 
   /**
@@ -54,6 +54,7 @@ export class LoginPage {
    */
   async expectLoggedIn() {
     await expect(this.page.locator('.title')).toHaveText('Products');
+    console.log('Login successful, products page is visible');
   }
 
   /**
