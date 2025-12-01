@@ -35,15 +35,10 @@ test('opening product page', async ({ page }) => {
 });
 
 test('clicking add to cart changes button to remove ', async ({ page }) => {
-  // 1. Go to SauceDemo login page
   await page.goto('https://www.saucedemo.com/');
-  // 2. Fill in username
   await page.fill('#user-name', 'standard_user');
-  // 3. Fill in password
   await page.fill('#password', 'secret_sauce');
-  // 4. Click login button
   await page.click('#login-button');
-  // 5. Verify login success - check that products page is visible
   await expect(page.locator('.title')).toHaveText('Products');
 
   // 7. click on the Sauce Labs Backpack
