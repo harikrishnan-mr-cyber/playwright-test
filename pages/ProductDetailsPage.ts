@@ -16,13 +16,16 @@ export class ProductDetailsPage {
 
   async addToCart() {
     await this.addToCartButton.click();
+    console.log('Clicked on Add to Cart button');
   }
 
   async verifyRemoveButtonVisible() {
     await expect(this.removeButton).toBeVisible();
+    console.log('Remove button is visible');
   }
 
-  async verifyDescription(description: string) {
-    await expect(this.description).toHaveText(description);
+  async verifyDescription(prodDescription: string) {
+    await expect(this.description).toHaveText(prodDescription);
+    console.log('Product description "${prodDescription}" is verified');
   }
 }
