@@ -4,7 +4,6 @@ import { ProductsPage } from '../pages/ProductsPage';
 import { ProductDetailsPage } from '../pages/ProductDetailsPage';
 import { CartPage } from '../pages/CartPage';
 import { CheckoutPage } from '../pages/CheckoutPage';
-
 test('Login to view Product Page', async ({ page }) => {
   const login = new LoginPage(page);
   const products = new ProductsPage(page);

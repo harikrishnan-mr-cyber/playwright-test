@@ -1,6 +1,6 @@
 import { expect, Locator, Page } from '@playwright/test';
 
-export class CartPage {
+export class CheckoutPage {
   readonly page: Page;
   readonly firstname: Locator;
   readonly lastname: Locator;
@@ -52,8 +52,9 @@ export class CartPage {
   }
 
   async verifyPurchaseCompletePage() {
-    await expect(this.page.locator('.complete-header')).toHaveText('Thank you for your order!');
-    console.log('Purchase Complete page is visible');
+    await expect(this.page.locator('.title')).toHaveText('Checkout: Complete!');
+    // await expect(this.page.locator('.complete-header')).toHaveText('Thank you for your order!');
+
   }
 
 }

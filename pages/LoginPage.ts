@@ -1,12 +1,5 @@
 import { expect, Locator, Page } from '@playwright/test';
 
-/**
- * LoginPage
- * ----------
- * Page Object Model (POM) class representing the Login page of SauceDemo.
- * This class abstracts UI locators and provides reusable actions such as
- * navigating to the login page, entering credentials, and validating login state.
- */
 export class LoginPage {
   // Reference to Playwright's Page object, used to interact with the browser
   readonly page: Page;
